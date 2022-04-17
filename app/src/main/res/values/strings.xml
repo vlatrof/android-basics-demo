@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Weather App</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_title">weather</string>
+    <string name="main_activity_enter_location_button_hint">Enter location</string>
+    <string name="main_activity_button_text">show weather</string>
+    <string name="main_activity_checkbox_show_speed_of_wind">Show speed of wind</string>
+    <string name="main_activity_checkbox_show_pressure">Show pressure</string>
+    <string name="main_activity_checkbox_show_humidity">Show humidity</string>
+    <string name="main_activity_empty_req_toast_text">Please, enter location</string>
+
+    <!-- Second activity -->
+    <string name="second_activity_title">target city weather</string>
+    <string name="second_activity_show_temperature_text">Temperature: </string>
+    <string name="second_activity_show_humidity_text">Humidity: </string>
+    <string name="second_activity_show_pressure_text">Pressure: </string>
+    <string name="second_activity_show_speed_of_wind_text">Speed of wind:</string>
+    <string name="second_activity_bad_req_exception_shown_text">Sorry, we have error with getting data. Please, try again later</string>
+    <string name="second_activity_no_such_location_exception_shown_text">Sorry, there is no data for location: </string>
+
+</resources>
