@@ -29,9 +29,15 @@ public class SecondActivity extends AppCompatActivity {
     String targetLocation;
 
     @Override public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        initViews();
+        loadWeatherData();
+
+    }
+
+    private void initViews() {
 
         locationTV        = findViewById(R.id.location_title);
         temperatureInfoTV = findViewById(R.id.weather_info_temperature);
@@ -39,6 +45,10 @@ public class SecondActivity extends AppCompatActivity {
         pressureInfoTV    = findViewById(R.id.weather_info_pressure);
         speedOfWindInfoTV = findViewById(R.id.weather_info_speed_of_wind);
         badReqMessageTV   = findViewById(R.id.bad_req_message);
+
+    }
+
+    private void loadWeatherData() {
 
         Bundle extras = getIntent().getExtras();
 

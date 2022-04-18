@@ -14,7 +14,7 @@ import com.example.weatherapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LOCATION_INPUT_TAG         = "LOCATION_INPUT";
+    private static final String LOCATION_INPUT_TAG     = "LOCATION_INPUT";
     private static final String SHOW_HUMIDITY_TAG      = "SHOW_HUMIDITY";
     private static final String SHOW_PRESSURE_TAG      = "SHOW_PRESSURE";
     private static final String SHOW_SPEED_OF_WIND_TAG = "SHOW_SPEED_OF_WIND";
@@ -26,18 +26,29 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBoxShowSpeedOfWind;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+        initViews();
+        showWeatherButton.setOnClickListener(v -> onClickShowWeatherButton());
 
-        // TODO initViews()
+    }
+
+    @Override protected void onStart() {
+
+        super.onStart();
+        locationInput.getText().clear();
+        locationInput.clearFocus();
+
+    }
+
+    private void initViews() {
+
         locationInput           = findViewById(R.id.location_input);
         showWeatherButton       = findViewById(R.id.show_weather_button);
         checkBoxShowHumidity    = findViewById(R.id.checkBoxShowHumidity);
         checkBoxShowPressure    = findViewById(R.id.checkBoxShowPressure);
         checkBoxShowSpeedOfWind = findViewById(R.id.checkBoxShowSpeedOfWind);
-
-        showWeatherButton.setOnClickListener(v -> onClickShowWeatherButton());
 
     }
 
@@ -66,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override protected void onSaveInstanceState(Bundle outState) {
+    @Override protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putString(LOCATION_INPUT_TAG, locationInput.getText().toString());
