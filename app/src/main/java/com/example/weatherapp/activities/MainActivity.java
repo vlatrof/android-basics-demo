@@ -1,10 +1,15 @@
 package com.example.weatherapp.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String SHOW_PRESSURE_TAG      = "SHOW_PRESSURE";
     private static final String SHOW_SPEED_OF_WIND_TAG = "SHOW_SPEED_OF_WIND";
 
+    ScrollView scrollView;
     EditText locationInput;
     Button showWeatherButton;
     CheckBox checkBoxShowHumidity;
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
         showWeatherButton.setOnClickListener(v -> onClickShowWeatherButton());
+        scrollView.setOnTouchListener((v, event) -> onTouchScrollView() );
 
     }
 
@@ -44,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
 
+        scrollView              = findViewById(R.id.main_activity_scroll_view);
         locationInput           = findViewById(R.id.location_input);
         showWeatherButton       = findViewById(R.id.show_weather_button);
         checkBoxShowHumidity    = findViewById(R.id.checkBoxShowHumidity);
@@ -74,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
 
         }
+
+    }
+
+    private boolean onTouchScrollView(){
+
+        locationInput.clearFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(locationInput.getWindowToken(), 0);
+        return false;
 
     }
 
