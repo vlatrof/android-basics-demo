@@ -18,7 +18,7 @@
     <string name="second_activity_show_humidity_text">Humidity: </string>
     <string name="second_activity_show_pressure_text">Pressure: </string>
     <string name="second_activity_show_speed_of_wind_text">Speed of wind:</string>
-    <string name="second_activity_bad_req_exception_shown_text">Sorry, we have error with getting data. Please, try again later</string>
-    <string name="second_activity_no_such_location_exception_shown_text">Sorry, there is no data for location: </string>
+    <string name="second_activity_empty_req_error_shown_text">Sorry, we have error with getting data. Please, try again later</string>
+    <string name="second_activity_no_such_location_error_shown_text">Sorry, there is no data for location: </string>
 
 </resources>

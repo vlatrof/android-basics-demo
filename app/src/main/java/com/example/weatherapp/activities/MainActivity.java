@@ -3,6 +3,7 @@ package com.example.weatherapp.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.weatherapp.model.LocationWeatherDataRequest;
 import com.example.weatherapp.utils.dataprovider.exceptions.EmptyRequestException;
 import com.example.weatherapp.R;
 
@@ -67,12 +69,15 @@ public class MainActivity extends AppCompatActivity {
             if (locationInput.getText().toString().isEmpty())
                 throw new EmptyRequestException();
 
-            Intent intent = new Intent(this, SecondActivity.class)
-                    .putExtra(LOCATION_INPUT_TAG, locationInput.getText().toString())
-                    .putExtra(SHOW_HUMIDITY_TAG, checkBoxShowHumidity.isChecked())
-                    .putExtra(SHOW_PRESSURE_TAG, checkBoxShowPressure.isChecked())
-                    .putExtra(SHOW_SPEED_OF_WIND_TAG, checkBoxShowSpeedOfWind.isChecked());
+            LocationWeatherDataRequest request = new LocationWeatherDataRequest(
+                    locationInput.getText().toString(),
+                    checkBoxShowHumidity.isChecked(),
+                    checkBoxShowPressure.isChecked(),
+                    checkBoxShowSpeedOfWind.isChecked()
+            );
 
+            Intent intent = new Intent(this, SecondActivity.class);
+            intent.putExtra(LocationWeatherDataRequest.class.getCanonicalName(), request);
             startActivity(intent);
 
         } catch (EmptyRequestException e) {

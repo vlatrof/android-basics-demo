@@ -1,4 +1,4 @@
 package com.example.weatherapp.utils.dataprovider.exceptions;
 
-public class NoSuchLocationException extends DataProviderBaseException {
+public class NoSuchLocationException extends WeatherDataProviderBaseException {
 }
