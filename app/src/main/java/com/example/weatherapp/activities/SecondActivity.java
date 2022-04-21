@@ -26,21 +26,47 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         initViews();
+        
+        try {
+
+            if (getIntent() == null)
+                throw new NullPointerException("Null intent!");
+
+            if (getIntent().getData() == null)
+                throw new NullPointerException("Null intent data!");
+
+        } catch (NullPointerException e) {
+
+            renderErrorMessage(getString(R.string.second_activity_getting_data_error_shown_text));
+            e.printStackTrace();
+            return;
+
+        }
 
         LocationWeatherDataRequest request =
                 getIntent().getParcelableExtra(LocationWeatherDataRequest.class.getCanonicalName());
 
         try {
-            renderWeatherData(loadWeatherData(request),
+
+            LocationWeatherData data = loadWeatherData(request);
+
+            renderWeatherData(data,
                               request.isHumidityParameter(),
                               request.isPressureParameter(),
                               request.isSpeedOfWindParameter());
+
         } catch (EmptyRequestException e) {
-            renderErrorMessage(getString(R.string.second_activity_empty_req_error_shown_text));
+
+            renderErrorMessage(getString(R.string.second_activity_getting_data_error_shown_text));
+            e.printStackTrace();
+
         } catch (NoSuchLocationException e) {
+
             renderErrorMessage(
                     getString(R.string.second_activity_no_such_location_error_shown_text)
-                         + " " + request.getLocation());
+                            + " " + request.getLocation());
+            e.printStackTrace();
+
         }
 
     }
