@@ -5,10 +5,10 @@ import android.os.Parcelable;
 
 public class LocationWeatherDataRequest implements Parcelable {
 
-    private final String    location;
-    private final boolean   humidityParameter;
-    private final boolean   pressureParameter;
-    private final boolean   speedOfWindParameter;
+    private final String location;
+    private final boolean humidityParameter;
+    private final boolean pressureParameter;
+    private final boolean speedOfWindParameter;
 
     public LocationWeatherDataRequest(String location, boolean humidityParameter, boolean pressureParameter, boolean speedOfWindParameter) {
         this.location = location;
@@ -38,15 +38,15 @@ public class LocationWeatherDataRequest implements Parcelable {
         @Override
         public LocationWeatherDataRequest createFromParcel(Parcel source) {
 
-            String location             = source.readString();
-            boolean humidityParameter   = source.readBoolean();
-            boolean pressureParameter   = source.readBoolean();
+            String location = source.readString();
+            boolean humidityParameter = source.readBoolean();
+            boolean pressureParameter = source.readBoolean();
             boolean speedOfWindParameter = source.readBoolean();
 
             return new LocationWeatherDataRequest(location,
-                                                  humidityParameter,
-                                                  pressureParameter,
-                                                  speedOfWindParameter);
+                    humidityParameter,
+                    pressureParameter,
+                    speedOfWindParameter);
         }
 
         @Override

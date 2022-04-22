@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,29 +19,31 @@ import com.example.weatherapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LOCATION_INPUT_TAG     = "LOCATION_INPUT";
-    private static final String SHOW_HUMIDITY_TAG      = "SHOW_HUMIDITY";
-    private static final String SHOW_PRESSURE_TAG      = "SHOW_PRESSURE";
+    private static final String LOCATION_INPUT_TAG = "LOCATION_INPUT";
+    private static final String SHOW_HUMIDITY_TAG = "SHOW_HUMIDITY";
+    private static final String SHOW_PRESSURE_TAG = "SHOW_PRESSURE";
     private static final String SHOW_SPEED_OF_WIND_TAG = "SHOW_SPEED_OF_WIND";
 
-    ScrollView scrollView;
-    EditText locationInput;
-    Button showWeatherButton;
-    CheckBox checkBoxShowHumidity;
-    CheckBox checkBoxShowPressure;
-    CheckBox checkBoxShowSpeedOfWind;
+    private ScrollView scrollView;
+    private EditText locationInput;
+    private Button showWeatherButton;
+    private CheckBox checkBoxShowHumidity;
+    private CheckBox checkBoxShowPressure;
+    private CheckBox checkBoxShowSpeedOfWind;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
         showWeatherButton.setOnClickListener(v -> onClickShowWeatherButton());
-        scrollView.setOnTouchListener((v, event) -> onTouchScrollView() );
+        scrollView.setOnTouchListener((v, event) -> onTouchScrollView());
 
     }
 
-    @Override protected void onStart() {
+    @Override
+    protected void onStart() {
 
         super.onStart();
         locationInput.getText().clear();
@@ -50,16 +53,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
 
-        scrollView              = findViewById(R.id.main_activity_scroll_view);
-        locationInput           = findViewById(R.id.location_input);
-        showWeatherButton       = findViewById(R.id.show_weather_button);
-        checkBoxShowHumidity    = findViewById(R.id.checkBoxShowHumidity);
-        checkBoxShowPressure    = findViewById(R.id.checkBoxShowPressure);
-        checkBoxShowSpeedOfWind = findViewById(R.id.checkBoxShowSpeedOfWind);
+        scrollView = findViewById(R.id.main_activity_scroll_view);
+        locationInput = findViewById(R.id.et_location_input);
+        showWeatherButton = findViewById(R.id.btn_show_weather);
+        checkBoxShowHumidity = findViewById(R.id.cb_show_humidity);
+        checkBoxShowPressure = findViewById(R.id.cb_show_pressure);
+        checkBoxShowSpeedOfWind = findViewById(R.id.cb_show_speed_of_wind);
 
     }
 
-    private void onClickShowWeatherButton(){
+    private void onClickShowWeatherButton() {
 
         try {
 
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean onTouchScrollView(){
+    private boolean onTouchScrollView() {
 
         locationInput.clearFocus();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -96,7 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override protected void onSaveInstanceState(@NonNull Bundle outState) {
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+
         super.onSaveInstanceState(outState);
 
         outState.putString(LOCATION_INPUT_TAG, locationInput.getText().toString());
@@ -106,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+
         super.onRestoreInstanceState(savedInstanceState);
 
         locationInput.setText(savedInstanceState.getString(LOCATION_INPUT_TAG));

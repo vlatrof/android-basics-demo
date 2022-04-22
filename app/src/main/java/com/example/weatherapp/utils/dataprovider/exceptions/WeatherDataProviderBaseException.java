@@ -1,4 +1,4 @@
 package com.example.weatherapp.utils.dataprovider.exceptions;
 
-public class WeatherDataProviderBaseException extends Exception{
+public class WeatherDataProviderBaseException extends Exception {
 }

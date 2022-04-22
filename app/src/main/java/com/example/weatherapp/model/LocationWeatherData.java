@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class LocationWeatherData {
 
-    private final String    location;
-    private final double    temperature;
-    private final double    humidity;
-    private final double    pressure;
-    private final double    speedOfWind;
+    private final String location;
+    private final double temperature;
+    private final double humidity;
+    private final double pressure;
+    private final double speedOfWind;
 
     public LocationWeatherData(String location,
                                double temperature,
@@ -16,11 +16,11 @@ public class LocationWeatherData {
                                double pressure,
                                double speedOfWind) {
 
-        this.location       = location;
-        this.temperature    = temperature;
-        this.humidity       = humidity;
-        this.pressure       = pressure;
-        this.speedOfWind    = speedOfWind;
+        this.location = location;
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.speedOfWind = speedOfWind;
 
     }
 

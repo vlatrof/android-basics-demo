@@ -13,22 +13,22 @@ public class WeatherDataProvider {
             throw new EmptyRequestException();
         }
 
-        if (location.equalsIgnoreCase("moscow")){
+        if (location.equalsIgnoreCase("moscow")) {
 
             double temperature = -25;
-            double humidity    = 50;
-            double pressure    = 740;
+            double humidity = 50;
+            double pressure = 740;
             double speedOfWind = 1;
 
             return new LocationWeatherData(location, temperature, humidity, pressure, speedOfWind);
 
         }
 
-        if (location.equalsIgnoreCase("london")){
+        if (location.equalsIgnoreCase("london")) {
 
             double temperature = -15.7;
-            double humidity    = 80;
-            double pressure    = 765;
+            double humidity = 80;
+            double pressure = 765;
             double speedOfWind = 4;
 
             return new LocationWeatherData(location, temperature, humidity, pressure, speedOfWind);

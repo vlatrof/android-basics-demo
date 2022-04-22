@@ -5,79 +5,78 @@
     android:layout_height="fill_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".activities.SecondActivity">
 
         <TextView
-            android:id="@+id/location_title"
-            android:visibility="gone"
+            android:id="@+id/tv_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_common"
             android:layout_marginTop="@dimen/margin_top_common"
+            android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/weather_info_temperature"
-            android:visibility="gone"
+            android:id="@+id/tv_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_common"
             android:layout_marginTop="@dimen/margin_top_common"
+            android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
         <TextView
-            android:id="@+id/weather_info_humidity"
-            android:visibility="gone"
+            android:id="@+id/tv_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_common"
             android:layout_marginTop="@dimen/margin_top_common"
+            android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weather_info_temperature" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
         <TextView
-            android:id="@+id/weather_info_pressure"
-            android:visibility="gone"
+            android:id="@+id/tv_pressure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_common"
             android:layout_marginTop="@dimen/margin_top_common"
+            android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weather_info_humidity" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_humidity" />
 
         <TextView
-            android:id="@+id/weather_info_speed_of_wind"
-            android:visibility="gone"
+            android:id="@+id/tv_speed_of_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_common"
             android:layout_marginTop="@dimen/margin_top_common"
+            android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weather_info_pressure" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_pressure" />
 
         <TextView
-            android:id="@+id/bad_req_message"
-            android:visibility="gone"
+            android:id="@+id/tv_bad_req_message"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:maxWidth="@dimen/bad_req_message_block_max_width"
-            android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_common"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
