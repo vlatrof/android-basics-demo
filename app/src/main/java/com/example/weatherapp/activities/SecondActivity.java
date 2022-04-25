@@ -137,7 +137,7 @@ public class SecondActivity extends AppCompatActivity {
         humidityInfoTV.setVisibility(View.GONE);
         pressureInfoTV.setVisibility(View.GONE);
         speedOfWindInfoTV.setVisibility(View.GONE);
-        
+
         errorMessageTV.setText(msg);
         errorMessageTV.setVisibility(View.VISIBLE);
 
