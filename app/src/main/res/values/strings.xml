@@ -4,7 +4,7 @@
     <string name="app_name">Weather App</string>
 
     <!-- Main activity -->
-    <string name="main_activity_title">weather</string>
+    <string name="main_activity_title">Weather</string>
     <string name="main_activity_enter_location_button_hint">Enter location</string>
     <string name="main_activity_button_text">show weather</string>
     <string name="main_activity_checkbox_show_speed_of_wind">Show speed of wind</string>
@@ -13,7 +13,6 @@
     <string name="main_activity_empty_req_toast_text">Please, enter location</string>
 
     <!-- Second activity -->
-    <string name="second_activity_title">target city weather</string>
     <string name="second_activity_show_temperature_text">Temperature: </string>
     <string name="second_activity_show_humidity_text">Humidity: </string>
     <string name="second_activity_show_pressure_text">Pressure: </string>

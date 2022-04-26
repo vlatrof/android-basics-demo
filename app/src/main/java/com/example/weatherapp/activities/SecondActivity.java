@@ -35,10 +35,11 @@ public class SecondActivity extends AppCompatActivity {
                 throw new NullPointerException("Null intent!");
 
             if (getIntent().getData() == null)
-                throw new NullPointerException("Null intent data!");
+                throw new NullPointerException("Null intent extras!");
 
         } catch (NullPointerException e) {
 
+            e.printStackTrace();
             renderErrorMessage(getString(R.string.second_activity_getting_data_error_shown_text));
             return;
 
@@ -58,10 +59,12 @@ public class SecondActivity extends AppCompatActivity {
 
         } catch (EmptyRequestException e) {
 
+            e.printStackTrace();
             renderErrorMessage(getString(R.string.second_activity_getting_data_error_shown_text));
 
         } catch (NoSuchLocationException e) {
 
+            e.printStackTrace();
             renderErrorMessage(
                     getString(R.string.second_activity_no_such_location_error_shown_text)
                             + " " + request.getLocation());
