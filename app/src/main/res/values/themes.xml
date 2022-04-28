@@ -12,13 +12,11 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
 
         <!-- Splashscreen customization -->
         <item name="android:windowSplashScreenBackground">@color/white</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splashscreen_logo_animated</item>
         <item name="android:windowSplashScreenAnimationDuration">2147483647</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/ic_splashscreen_branding</item>
 
     </style>
 

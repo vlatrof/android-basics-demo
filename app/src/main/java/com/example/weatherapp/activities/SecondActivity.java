@@ -34,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
             if (getIntent() == null)
                 throw new NullPointerException("Null intent!");
 
-            if (getIntent().getData() == null)
+            if (getIntent().getExtras() == null)
                 throw new NullPointerException("Null intent extras!");
 
         } catch (NullPointerException e) {
@@ -102,14 +102,14 @@ public class SecondActivity extends AppCompatActivity {
         locationTV.setText(data.getLocation());
         locationTV.setVisibility(View.VISIBLE);
 
-        String temperatureStr = String.format("%s %.1f", getString(
+        String temperatureStr = String.format("%s %.0f", getString(
                 R.string.second_activity_show_temperature_text),
                 data.getTemperature());
         temperatureInfoTV.setText(temperatureStr);
         temperatureInfoTV.setVisibility(View.VISIBLE);
 
         if (isHumidityRequested) {
-            String str = String.format("%s %.1f",
+            String str = String.format("%s %.0f",
                     getString(R.string.second_activity_show_humidity_text),
                     data.getHumidity());
             humidityInfoTV.setText(str);
@@ -117,7 +117,7 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         if (isPressureRequested) {
-            String str = String.format("%s %.1f",
+            String str = String.format("%s %.0f",
                     getString(R.string.second_activity_show_pressure_text),
                     data.getPressure());
             pressureInfoTV.setText(str);
@@ -125,7 +125,7 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         if (isSpeedOfWindRequested) {
-            String str = String.format("%s %.1f",
+            String str = String.format("%s %.0f",
                     getString(R.string.second_activity_show_speed_of_wind_text),
                     data.getSpeedOfWind());
             speedOfWindInfoTV.setText(str);
