@@ -6,28 +6,32 @@ import com.example.weatherapp.utils.dataprovider.exceptions.NoSuchLocationExcept
 
 class WeatherDataProvider {
 
-    fun getData(location : String) : LocationWeatherData {
+    companion object {
 
-        if (location.isEmpty())
-            throw EmptyRequestException()
+        fun getData(location : String) : LocationWeatherData {
 
-        if (location.equals("moscow", true))
-            return LocationWeatherData(location,
-                -25.0,
-                50.0,
-                740.0,
-                1.0
-            )
+            if (location.isEmpty())
+                throw EmptyRequestException()
 
-        if (location.equals("london", true))
-            return LocationWeatherData(location,
-                -15.7,
-                80.0,
-                765.0,
-                4.0
-            )
+            if (location.equals("moscow", true))
+                return LocationWeatherData(location,
+                    -25.0,
+                    50.0,
+                    740.0,
+                    1.0
+                )
 
-        throw NoSuchLocationException();
+            if (location.equals("london", true))
+                return LocationWeatherData(location,
+                    -15.7,
+                    80.0,
+                    765.0,
+                    4.0
+                )
+
+            throw NoSuchLocationException();
+
+        }
 
     }
 
