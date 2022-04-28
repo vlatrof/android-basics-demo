@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Погода</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_title">Погода</string>
+    <string name="main_activity_enter_location_button_hint">Введите место</string>
+    <string name="main_activity_button_text">Показать погоду</string>
+    <string name="main_activity_checkbox_show_speed_of_wind">Показывать скорость ветра</string>
+    <string name="main_activity_checkbox_show_pressure">Показывать давление</string>
+    <string name="main_activity_checkbox_show_humidity">Показывать влажность воздуха</string>
+    <string name="main_activity_empty_req_toast_text">Пожалуйста, введите место</string>
+
+    <!-- Second activity -->
+    <string name="second_activity_show_temperature_text">Температура: </string>
+    <string name="second_activity_show_humidity_text">Влажность воздуха: </string>
+    <string name="second_activity_show_pressure_text">Давление: </string>
+    <string name="second_activity_show_speed_of_wind_text">Скорость ветра:</string>
+    <string name="second_activity_getting_data_error_shown_text">К сожалению, произошла ошибка при получении данных. Пожалуйста попробуйте позже</string>
+    <string name="second_activity_no_such_location_error_shown_text">К сожалениею, для данного местоположения нет данных о погоде: </string>
+
+</resources>
