@@ -10,7 +10,6 @@ import com.example.weatherapp.R
 import com.example.weatherapp.model.LocationWeatherDataRequest
 import com.example.weatherapp.utils.dataprovider.exceptions.EmptyRequestException
 
-
 class MainActivity : AppCompatActivity() {
 
     val LOCATION_INPUT_TAG: String = "LOCATION_INPUT"
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initViews()
         showWeatherButton.setOnClickListener { onClickShowWeatherButton() }
-        scrollView.setOnTouchListener{ v, event -> onTouchScrollView()}
+        scrollView.setOnTouchListener { v, event -> onTouchScrollView() }
 
     }
 

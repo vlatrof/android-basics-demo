@@ -1,1 +1,1 @@
-# Android application demonstrating basic functional
+# An application that demonstrates the basic Android functionality

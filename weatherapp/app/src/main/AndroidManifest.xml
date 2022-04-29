@@ -11,13 +11,18 @@
         android:theme="@style/Theme.Weatherapp">
 
         <activity
-            android:name=".activities.MainActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
+            android:name=".activities.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTop">
         </activity>
 
         <activity android:name=".activities.SecondActivity">
